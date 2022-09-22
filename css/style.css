@@ -6,6 +6,24 @@ body{
     font-size: large;
     
 }
+
+/*velocidade*/
+
+.speed{
+    width: 50vw;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+select, option{
+    background-color:black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: large;
+}
+
+/*cronometro*/
 .wrapper{
     display: flex;
     flex-direction: column;

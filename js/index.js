@@ -1,6 +1,7 @@
 var hr = 0
 var min = 0
 var sec = 0
+var speed = 1
 var interval
 
 function twodig(digit){
@@ -12,7 +13,8 @@ function twodig(digit){
 }
 
 function start(){
-    interval = setInterval(watch,0.00001)
+    watch()
+    interval = setInterval(watch,1000/speed)
 }
 function pause(){
     clearInterval(interval)
@@ -37,4 +39,13 @@ function watch(){
         }
     }
     document.getElementById('watch').innerHTML= twodig(hr)+":"+twodig(min)+":"+twodig(sec)
+}
+
+/* Alterando velocidade */
+
+function changeSpeed(){
+    var select=document.getElementById("speed")
+    speed = parseInt(select.options[select.selectedIndex].value)
+    clearInterval(interval)
+    console.log(speed)
 }
