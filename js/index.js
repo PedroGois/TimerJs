@@ -15,9 +15,12 @@ function twodig(digit){
 function start(){
     watch()
     interval = setInterval(watch,1000/speed)
+    document.querySelector('.botoes').innerHTML="<button class='pause-btn' onclick='pause()'>Pausar</button> <button class='stop-btn'  onclick='stop()'>Parar</button>"
+    console.log(botao)
 }
 function pause(){
     clearInterval(interval)
+    document.querySelector('.botoes').innerHTML="<button class='start-btn' onclick='start()'>Retomar</button> <button class='stop-btn'  onclick='stop()'>Parar</button>"
 }
 function stop(){
     clearInterval(interval)
@@ -25,6 +28,7 @@ function stop(){
     min = 0
     sec = 0
     document.getElementById('watch').innerHTML= twodig(hr)+":"+twodig(min)+":"+twodig(sec)
+    document.querySelector('.botoes').innerHTML="<button class='start-btn' onclick='start()'>Iniciar</button>"
 }
 
 
@@ -44,8 +48,9 @@ function watch(){
 /* Alterando velocidade */
 
 function changeSpeed(){
+    stop()
     var select=document.getElementById("speed")
     speed = parseInt(select.options[select.selectedIndex].value)
     clearInterval(interval)
-    console.log(speed)
+    console.log(select.selectedIndex)
 }

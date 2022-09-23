@@ -40,8 +40,8 @@ h1{
 div .botoes{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 60vw;
+    justify-content: space-evenly;
+    width: 40vw;
     
 }
 
